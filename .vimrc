@@ -1,8 +1,12 @@
 syntax on
 :so ~/.vim/plugin/surround.vim
 filetype off
-:colorscheme koehler
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+colorscheme koehler
 filetype plugin indent on
+let mapleader = "\\"
 set guioptions=aAce
 set go-=T
 set nocompatible
@@ -27,6 +31,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
 set undofile
+set showcmd
 nnoremap / /\v
 vnoremap / /\v
 set ignorecase
@@ -54,3 +59,7 @@ set columns=205
 autocmd VimEnter * NERDTree
 set spelllang=en
 set spell
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>a :Ack
+vnoremap <leader>] :TComment <CR>
+nnoremap <leader>] :TComment <CR>
