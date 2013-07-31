@@ -10,16 +10,18 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'rking/vim-detailed'
 
-:so ~/.vim/plugin/surround.vim
 filetype off
 filetype plugin indent on
-colorscheme koehler
+colo detailed
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 highlight SignColumn ctermbg=black guibg=black
+:hi CursorLine  cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 
 let mapleader = "\\"
 set guioptions=aAce
